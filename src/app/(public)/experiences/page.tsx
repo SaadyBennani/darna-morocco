@@ -4,6 +4,10 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import ExperienceCard from "@/components/shared/ExperienceCard";
+import ExperienceFilters, {
+  DEFAULT_FILTERS,
+  type ExperienceFilterState,
+} from "@/components/shared/ExperienceFilters";
 import { EXPERIENCES, CATEGORIES } from "@/lib/data";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -15,6 +19,7 @@ function ExploreContent() {
   const initialQuery = searchParams.get("q") || "";
   const [query, setQuery] = useState(initialQuery);
   const [activeCategory, setActiveCategory] = useState("All");
+  const [filters, setFilters] = useState<ExperienceFilterState>(DEFAULT_FILTERS);
 
   const filtered = useMemo(() => {
     return EXPERIENCES.filter((exp) => {
@@ -23,9 +28,13 @@ function ExploreContent() {
         !query ||
         exp.title.toLowerCase().includes(query.toLowerCase()) ||
         exp.location.toLowerCase().includes(query.toLowerCase());
-      return matchesCategory && matchesQuery;
+      const matchesPrice = exp.price <= filters.maxPrice;
+      const matchesPropertyType =
+        filters.propertyTypes.length === 0 || filters.propertyTypes.includes(exp.propertyType);
+      const matchesBedrooms = exp.bedrooms >= filters.minBedrooms;
+      return matchesCategory && matchesQuery && matchesPrice && matchesPropertyType && matchesBedrooms;
     });
-  }, [query, activeCategory]);
+  }, [query, activeCategory, filters]);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -76,30 +85,38 @@ function ExploreContent() {
           </div>
         </section>
 
-        {/* Grid */}
+        {/* Main Content */}
         <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          {filtered.length === 0 ? (
-            <div className="text-center py-24">
-              <p className="text-muted-foreground text-lg">No experiences found.</p>
-              <button
-                onClick={() => { setQuery(""); setActiveCategory("All"); }}
-                className="mt-4 text-sm text-primary underline"
-              >
-                Clear filters
-              </button>
+          <div className="flex flex-col gap-8 sm:flex-row">
+            {/* Sidebar Filters */}
+            <ExperienceFilters filters={filters} onChange={setFilters} />
+
+            {/* Grid */}
+            <div className="flex-1">
+              {filtered.length === 0 ? (
+                <div className="text-center py-24">
+                  <p className="text-muted-foreground text-lg">No experiences found.</p>
+                  <button
+                    onClick={() => { setQuery(""); setActiveCategory("All"); setFilters(DEFAULT_FILTERS); }}
+                    className="mt-4 text-sm text-primary underline"
+                  >
+                    Clear filters
+                  </button>
+                </div>
+              ) : (
+                <motion.div
+                  key={`${query}-${activeCategory}-${filters.maxPrice}-${filters.propertyTypes.join(",")}-${filters.minBedrooms}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
+                >
+                  {filtered.map((exp) => (
+                    <ExperienceCard key={exp.id} experience={exp} />
+                  ))}
+                </motion.div>
+              )}
             </div>
-          ) : (
-            <motion.div
-              key={`${query}-${activeCategory}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-            >
-              {filtered.map((exp) => (
-                <ExperienceCard key={exp.id} experience={exp} />
-              ))}
-            </motion.div>
-          )}
+          </div>
         </section>
       </main>
       <Footer />

@@ -1,0 +1,388 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "on-primary-container": "#8aa4ff",
+                            "inverse-primary": "#b5c4ff",
+                            "on-error-container": "#93000a",
+                            "inverse-surface": "#313030",
+                            "tertiary-fixed-dim": "#f9bc48",
+                            "primary-container": "#003399",
+                            "surface-tint": "#3557bc",
+                            "secondary": "#9d4131",
+                            "on-secondary-fixed-variant": "#7e2a1c",
+                            "on-tertiary-fixed-variant": "#5f4100",
+                            "error-container": "#ffdad6",
+                            "on-background": "#1c1b1b",
+                            "error": "#ba1a1a",
+                            "on-tertiary-fixed": "#271900",
+                            "surface-container-highest": "#e5e2e1",
+                            "outline-variant": "#c4c5d5",
+                            "tertiary-fixed": "#ffdea9",
+                            "on-secondary-fixed": "#3f0300",
+                            "on-primary-fixed-variant": "#153ea3",
+                            "on-error": "#ffffff",
+                            "on-tertiary-container": "#d69e2b",
+                            "surface-container-high": "#eae7e7",
+                            "inverse-on-surface": "#f3f0ef",
+                            "surface": "#fcf9f8",
+                            "surface-container-lowest": "#ffffff",
+                            "surface-variant": "#e5e2e1",
+                            "primary-fixed": "#dce1ff",
+                            "secondary-fixed": "#ffdad4",
+                            "surface-bright": "#fcf9f8",
+                            "on-primary-fixed": "#00164e",
+                            "tertiary": "#362400",
+                            "on-surface-variant": "#444653",
+                            "surface-dim": "#dcd9d9",
+                            "on-secondary-container": "#742316",
+                            "secondary-fixed-dim": "#ffb4a6",
+                            "primary": "#002068",
+                            "secondary-container": "#fd8b76",
+                            "background": "#fcf9f8",
+                            "on-tertiary": "#ffffff",
+                            "primary-fixed-dim": "#b5c4ff",
+                            "on-primary": "#ffffff",
+                            "on-surface": "#1c1b1b",
+                            "surface-container-low": "#f6f3f2",
+                            "tertiary-container": "#523800",
+                            "on-secondary": "#ffffff",
+                            "outline": "#747684",
+                            "surface-container": "#f0eded"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                        },
+                        "spacing": {
+                            "container-max": "1280px",
+                            "margin-mobile": "16px",
+                            "margin-desktop": "64px",
+                            "gutter": "24px",
+                            "unit": "8px",
+                            "section-gap-lg": "128px",
+                            "section-gap-sm": "64px"
+                        },
+                        "fontFamily": {
+                            "headline-md": ["Plus Jakarta Sans"],
+                            "label-md": ["Plus Jakarta Sans"],
+                            "headline-lg-mobile": ["Plus Jakarta Sans"],
+                            "body-lg": ["Plus Jakarta Sans"],
+                            "headline-lg": ["Plus Jakarta Sans"],
+                            "body-md": ["Plus Jakarta Sans"],
+                            "headline-xl": ["Plus Jakarta Sans"],
+                            "label-caps": ["Inter"],
+                            "display-hero": ["Plus Jakarta Sans"],
+                            "body-base": ["Inter"],
+                            "body-bold": ["Inter"]
+                        },
+                        "fontSize": {
+                            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                            "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "display-hero": ["60px", {"lineHeight": "72px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                            "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "body-bold": ["16px", {"lineHeight": "24px", "fontWeight": "600"}]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    }catch(_e){}</script></head><body class="bg-background text-on-surface font-body-base overflow-x-hidden">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-inverse-surface/95 backdrop-blur-md border-b border-outline-variant/30 transition-all duration-300">
+    <div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto">
+        <div class="flex items-center gap-8">
+            <a href="#" class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">Darna</a>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#" class="font-body-md text-body-md text-primary dark:text-inverse-primary font-bold border-b-2 border-primary transition-colors">Properties</a>
+                <a href="#" class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors">Community</a>
+                <a href="#" class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors">Portal</a>
+                <a href="#" class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors">Services</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="px-4 py-2 font-body-bold text-primary hover:text-secondary transition-colors duration-200">Sign In</button>
+            <button class="px-6 py-2 bg-primary text-on-primary rounded-lg font-body-bold shadow-md hover:bg-primary-container transition-transform duration-200 active:scale-90">List Property</button>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero Section -->
+    <section class="relative h-[90vh] min-h-[600px] flex items-center pt-16">
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <img class="w-full h-full object-cover" data-alt="A grand, high-end architectural masterpiece of a modern Moroccan villa featuring clean lines, rhythmic arches, and warm limestone textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsGWByXybMgRy5quoqohMnqHZQBlnaXZyYjvfsGHX_oh8B8iXcoXJjB3DgR06WrEVWnruU6XqdCQtTE2jzp9_ZwJH0JDbRCYbF7j0KlYChY3ktmrmHzACx_Z3q_IoIZ38nIU6wcuPJTVOO41b8TAO-OV2Bly9QjMuEueiUxAw49FKHPlxuaXZrst49fN2IbAjxe5JqDrYpG_fJQ0QbTADO1dLIjYST65niUTOcziM89oTP4EwscfC8Bg">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent"></div>
+            
+        </div>
+        <div class="relative z-20 w-full px-margin-desktop max-w-container-max mx-auto">
+            <div class="max-w-2xl text-white">
+                <h1 class="font-display-hero text-display-hero mb-6 animate-fade-in-up">Find Your Sanctuary in Modern Morocco</h1>
+                <p class="font-body-lg text-body-lg mb-10 opacity-90">Explore a curated collection of premium properties and join a vibrant community that values heritage and modern comfort.</p>
+                <!-- Search Bar -->
+                <div class="glass-effect rounded-xl p-2 shadow-2xl flex flex-col md:flex-row gap-2 max-w-3xl border border-white/20">
+                    <div class="flex-1 flex items-center bg-white/10 rounded-lg px-4 border border-white/30 focus-within:ring-2 ring-primary-fixed-dim">
+                        <span class="material-symbols-outlined text-white/70 mr-2" data-icon="search">search</span>
+                        <input class="w-full h-12 bg-transparent border-none focus:ring-0 text-white placeholder:text-white/60" placeholder="Location, Neighborhood, or City" type="text">
+                    </div>
+                    <div class="flex gap-2">
+                        <select class="h-12 bg-white/10 text-white rounded-lg px-4 border border-white/30 focus:ring-2 ring-primary-fixed-dim font-body-bold appearance-none">
+                            <option class="text-on-surface">For Rent</option>
+                            <option class="text-on-surface">For Sale</option>
+                        </select>
+                        <button class="h-12 px-8 bg-secondary text-on-secondary rounded-lg font-body-bold hover:bg-on-secondary-container transition-all active:scale-95 shadow-lg">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zellij Divider -->
+    <div class="zellij-divider"></div>
+
+    <!-- Featured Communities -->
+    <section class="py-section-gap-lg px-margin-desktop max-w-container-max mx-auto">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <span class="font-label-caps text-label-caps text-secondary mb-2 block uppercase tracking-widest">Exclusive Destinations</span>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">Featured Communities</h2>
+            </div>
+            <button class="flex items-center gap-2 text-primary font-body-bold hover:text-secondary hover:gap-3 transition-all">
+                View All Communities <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+            </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-auto md:h-[600px]">
+            <div class="md:col-span-8 group relative overflow-hidden rounded-xl shadow-sm border border-outline-variant/30">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="The Oasis Heights luxury residential compound" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDefJmrMazR20Lh4A8kKtVoP1KYMmaJyml9E_xF6zxr6gjzWZ4TK_oCpEdjoNmpavBpMlf1byDHCteW1m-suC9VbH2R7eM2QbYVen6vfWJvDpIkXRkSwqD9I3L0Sa32-_FOiYYsibkzLJjfD_hL_1M0OM4_Kw1R01QZdVHCHUrTxmuw8T6qdr7Jj7Qdv-fmgOES7OWlXF-z3sQTSUv2tVC8yB4OAhgYq-B3sTN-geER81N0lyfiSXdKzw">
+                <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 text-white">
+                    <span class="bg-secondary text-on-secondary text-[10px] font-bold tracking-widest px-3 py-1 rounded-full mb-3 inline-block">PREMIUM LISTING</span>
+                    <h3 class="font-headline-md text-headline-md">The Oasis Heights</h3>
+                    <p class="font-body-base opacity-80">Marrakech, Palmeraie</p>
+                </div>
+            </div>
+            <div class="md:col-span-4 grid grid-rows-2 gap-gutter">
+                <div class="group relative overflow-hidden rounded-xl shadow-sm border border-outline-variant/30">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Atlas View Villas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGOfTuvt51VgIYQYnIrrKRi91T1mS3-BXYcjuxifC9dp8_nWSUDXU3LyNcv7kDp016udsI9OucUib4r8dVoADpaIzfJqrFWMt68pkC8jRiHVup9nuaX7gLTHs0pbrQQn1sPAftmijzhGdN_G-Ug4mG_kFPJoVGzgWCAEXhVpckrR7U40TXBaHwQ5USqwyvywsmarARea0qVFMKPKeTNb6rAM9x0W_Uq4tfQnfZBWUWvgXQ-9BeQwWWSw">
+                    <div class="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="font-body-bold text-lg">Atlas View Villas</h3>
+                        <p class="text-sm opacity-80">Rabat, Souissi</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-sm border border-outline-variant/30">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Anfa Sky Residences" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwu2XlAGFGnkVvqcYLZuBpgx9u9qRc3Ogdaatze_w2XfzP73aa2D2k4bg736pZCK_QyzG6DO-UCuSUEUoveJwZbghCPjxCAcWZEBgrHsoAYp43QVrhfditY7kADP3AxgJie35agVHataDMH8lLTig-nDvVIty4B08PNMsdsldtjslkK_ogEC2NauO86UG6n8Ct3mRKZ8jCGSHTK8jQGCq5TIm5GNEQYPA1tVGAbx74DsqUTbmNz08IhA">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="font-body-bold text-lg">Anfa Sky Residences</h3>
+                        <p class="text-sm opacity-80">Casablanca, Anfa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services -->
+    <section class="bg-surface-container-low py-section-gap-lg relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 zellij-overlay opacity-5 -mr-32 -mt-32"></div>
+        <div class="px-margin-desktop max-w-container-max mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Beyond Real Estate</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">We provide a comprehensive ecosystem designed to make community living seamless, secure, and inspiring.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <div class="bg-white p-8 rounded-xl border border-outline-variant/50 hover:border-primary transition-all duration-300 flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+                        <span class="material-symbols-outlined !text-4xl" data-icon="handyman">handyman</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Seamless Maintenance</h3>
+                    <p class="font-body-base text-on-surface-variant mb-6">On-demand technical support and professional landscaping to keep your sanctuary in pristine condition.</p>
+                    <a class="text-primary font-body-bold inline-flex items-center gap-1 hover:text-secondary" href="#">Learn More <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span></a>
+                </div>
+                <div class="bg-white p-8 rounded-xl border border-outline-variant/50 hover:border-primary transition-all duration-300 flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+                        <span class="material-symbols-outlined !text-4xl" data-icon="forum">forum</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Community Forum</h3>
+                    <p class="font-body-base text-on-surface-variant mb-6">Connect with your neighbors, organize local events, and share recommendations in our private portal.</p>
+                    <a class="text-primary font-body-bold inline-flex items-center gap-1 hover:text-secondary" href="#">Join Discussion <span class="material-symbols-outlined text-sm" data-icon="groups">groups</span></a>
+                </div>
+                <div class="bg-white p-8 rounded-xl border border-outline-variant/50 hover:border-primary transition-all duration-300 flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+                        <span class="material-symbols-outlined !text-4xl" data-icon="person_apron">person_apron</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Resident Portal</h3>
+                    <p class="font-body-base text-on-surface-variant mb-6">Manage payments, book amenities, and track requests from our intuitive all-in-one digital dashboard.</p>
+                    <a class="text-primary font-body-bold inline-flex items-center gap-1 hover:text-secondary" href="#">Access Portal <span class="material-symbols-outlined text-sm" data-icon="login">login</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="py-section-gap-lg px-margin-desktop max-w-container-max mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+            <h2 class="font-headline-lg text-headline-lg text-on-surface">Community Insights &amp; News</h2>
+            <div class="flex gap-2">
+                <button class="p-2 border border-outline-variant rounded-full text-on-surface-variant hover:bg-primary-fixed hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+                </button>
+                <button class="p-2 border border-outline-variant rounded-full text-on-surface-variant hover:bg-primary-fixed hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+                </button>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <!-- News Card 1 -->
+            <div class="flex flex-col group cursor-pointer">
+                <div class="relative aspect-video overflow-hidden rounded-xl mb-6 border border-outline-variant/30">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern Moroccan living room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvw-h9LEJhBuJUli9qTfHfiooGfd07iOl_c-ecfGr9FhPllbLPfP5R8_ZlTHSJK0JASV-Zni2G9ljnepxQXb4JurQcJ045Ju1feTSo4t-ZIlJUK6IQw097VFgjor4Ln03TekCdKi9oxUENRuXOeBD3884Fn5L6a5tvA_vcAnrnWn36tRoT2Bv-JIM1w0QMWtW4w8JfM83I7DZu_c0sd1HnRSnarQBPGtqc7LwdOZdceZt3X4PwH1r6jA">
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-primary text-on-primary text-[10px] font-bold tracking-widest px-2 py-1 rounded">INSIGHTS</span>
+                    </div>
+                </div>
+                <p class="text-on-surface-variant font-label-caps text-sm mb-2">OCTOBER 14, 2024</p>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">Modern Minimalism meets Moroccan Craftsmanship</h3>
+                <p class="font-body-base text-on-surface-variant line-clamp-2">How Darna is redefining luxury living by blending centuries-old artisanal traditions with contemporary architectural standards...</p>
+            </div>
+            <!-- News Card 2 -->
+            <div class="flex flex-col group cursor-pointer">
+                <div class="relative aspect-video overflow-hidden rounded-xl mb-6 border border-outline-variant/30">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Casablanca skyline at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiicHaa_6BuVQi2BQCUMOL4QLmIqBZJ6vv-Pt0RLLSqb60dLVE4r5E624eDyIpP0gktkyC5twSo2tu0LEhgeM3_b71tVuj-If70bYhZuHhAeHsFjS_HhPdI7cAOa2ubuf3Znqtfx1ZHG8zGXM4kLcAwwhW3AARJQAszhzisKzK-76aFg-ktmoy67C9cZb43gKqzauxQ555wPtzOZcdeB6gTHG5czHvzhtytZWYgv8PF9Up-gGmt9ukTg">
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-secondary text-on-secondary text-[10px] font-bold tracking-widest px-2 py-1 rounded">MARKET</span>
+                    </div>
+                </div>
+                <p class="text-on-surface-variant font-label-caps text-sm mb-2">OCTOBER 08, 2024</p>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">Real Estate Trends: The Rise of Smart Communities</h3>
+                <p class="font-body-base text-on-surface-variant line-clamp-2">Exploring the increasing demand for integrated residential ecosystems in major Moroccan urban centers...</p>
+            </div>
+            <!-- News Card 3 -->
+            <div class="flex flex-col group cursor-pointer">
+                <div class="relative aspect-video overflow-hidden rounded-xl mb-6 border border-outline-variant/30">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Community garden event" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeUG9_LfJDbhv1qXDoo47f3S9YCu0Kr9U7Wwa7RB4e63JfyPiBV3nJD4hKNQJgNWvHyeqdGAiITz6t3Yiem9Aikt45cQEXHNHjk4YKwVB9Fnk1_3xP464J372kwCLSCFiE1lJbSoceuuaXI0LuE_mcd3j3UGXIWmjrTximNC89ev0m_l7c0YKYaps_ego4DrAcj2vlLCkWeO4aEI7Ij1bbvT_6feFuPfiFWHTFxo-zpa42Jav-2RcD-A">
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-tertiary text-on-tertiary text-[10px] font-bold tracking-widest px-2 py-1 rounded">EVENTS</span>
+                    </div>
+                </div>
+                <p class="text-on-surface-variant font-label-caps text-sm mb-2">SEPTEMBER 29, 2024</p>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">Darna Residents Annual Garden Gala 2024</h3>
+                <p class="font-body-base text-on-surface-variant line-clamp-2">Recapping a night of music, art, and traditional cuisine shared by the residents of the Oasis Heights community...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="mb-section-gap-lg px-margin-desktop max-w-container-max mx-auto">
+        <div class="relative bg-primary-container rounded-2xl p-12 overflow-hidden shadow-2xl">
+            <div class="absolute inset-0 zellij-overlay opacity-10"></div>
+            <div class="relative z-10 max-w-xl text-on-primary">
+                <h2 class="font-headline-lg text-headline-lg mb-4">Be the first to know</h2>
+                <p class="font-body-lg mb-8 opacity-90">Join our mailing list for early access to new property listings and exclusive community event invitations.</p>
+                <form class="flex flex-col sm:flex-row gap-4">
+                    <input class="flex-1 h-14 rounded-lg px-6 text-on-surface border-none focus:ring-4 ring-secondary-container/50 bg-white" placeholder="Enter your email" type="email">
+                    <button class="h-14 px-8 bg-secondary text-on-secondary font-body-bold rounded-lg hover:bg-on-secondary-container transition-all active:scale-95 shadow-lg" type="submit">Subscribe Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full pt-section-gap-sm pb-12 bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant/30">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+        <div class="col-span-1 md:col-span-1">
+            <h2 class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary mb-6">Darna</h2>
+            <p class="font-body-base text-on-surface-variant dark:text-surface-variant mb-6">Leading the future of premium real estate and community living in Morocco.</p>
+            <div class="flex gap-4">
+                <a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+                    <span class="material-symbols-outlined" data-icon="public">public</span>
+                </a>
+                <a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+                    <span class="material-symbols-outlined" data-icon="share">share</span>
+                </a>
+            </div>
+        </div>
+        <div>
+            <h3 class="font-body-bold text-on-surface mb-6">Properties</h3>
+            <ul class="space-y-4">
+                <li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary hover:underline transition-all" href="#">Rent Residential</a></li>
+                <li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary hover:underline transition-all" href="#">Buy Residential</a></li>
+                <li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary hover:underline transition-all" href="#">Commercial Space</a></li>
+                <li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary hover:underline transition-all" href="#">New Developments</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="font-body-bold text-on-surface mb-6">Company</h3>
+            <ul class="space-y-4">
+                <li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary hover:underline transition-all" href="#">About Us</a></li>
+                <li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary hover:underline transition-all" href="#">Careers</a></li>
+                <li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary hover:underline transition-all" href="#">Help Center</a></li>
+                <li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary hover:underline transition-all" href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="font-body-bold text-on-surface mb-6">Support</h3>
+            <ul class="space-y-4">
+                <li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary hover:underline transition-all" href="#">Contact Admin</a></li>
+                <li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary hover:underline transition-all" href="#">Report Issue</a></li>
+                <li class=""><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary hover:underline transition-all" href="#">Terms of Service</a></li>
+                <li class="pt-2">
+                    <span class="flex items-center gap-2 text-on-surface-variant dark:text-surface-variant">
+                        <span class="material-symbols-outlined text-secondary" data-icon="call">call</span>
+                        +212 522-000000
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mt-16 pt-8 border-t border-outline-variant/30 px-margin-desktop max-w-container-max mx-auto text-center">
+        <p class="font-body-base text-on-surface-variant dark:text-surface-variant">© 2024 Darna Real Estate. Modern Moroccan Living.</p>
+    </div>
+</footer>
+
+<script>
+    // Simple parallax effect for hero
+    window.addEventListener('scroll', () => {
+        const scroll = window.pageYOffset;
+        const heroImg = document.querySelector('section img');
+        const nav = document.querySelector('nav');
+        if (heroImg) {
+            heroImg.style.transform = `translateY(${scroll * 0.4}px)`;
+        }
+        if (scroll > 100) {
+            nav.classList.add('shadow-lg', 'h-14');
+            nav.classList.remove('h-16');
+        } else {
+            nav.classList.remove('shadow-lg', 'h-14');
+            nav.classList.add('h-16');
+        }
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section ></script></body></html>

@@ -1,14 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
-import { Search, ArrowRight, Users, Map, Star } from "lucide-react";
+import { Search, Compass, ShieldCheck, Users, Headset } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { buttonVariants } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import ExperienceCard from "@/components/shared/ExperienceCard";
-import { EXPERIENCES } from "@/lib/data";
+import ZellijDivider from "@/components/shared/ZellijDivider";
+import NewsCard from "@/components/shared/NewsCard";
+import NewsletterForm from "@/components/shared/NewsletterForm";
+import { EXPERIENCES, NEWS } from "@/lib/data";
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +23,30 @@ const stagger = {
   hidden: {},
   show: { transition: { staggerChildren: 0.12 } },
 };
+
+const SERVICES = [
+  {
+    icon: Compass,
+    title: "Curated Discovery",
+    description: "Every experience is hand-vetted by our team before it reaches you.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Trusted Booking",
+    description: "Secure payments and verified curators, so you can book with confidence.",
+  },
+  {
+    icon: Users,
+    title: "Local Community",
+    description: "Connect with hosts and fellow travelers through the Darna forum.",
+  },
+  {
+    icon: Headset,
+    title: "List Your Property",
+    description: "Share your riad, camp, or tour with travelers around the world.",
+    href: "/sign-up?role=merchant",
+  },
+];
 
 export default function HomePage() {
   const [query, setQuery] = useState("");
@@ -38,39 +64,39 @@ export default function HomePage() {
             "url('https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=1800&q=80')",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/50 to-background" />
         <motion.div
           variants={stagger}
           initial="hidden"
           animate="show"
           className="relative z-10 mx-auto max-w-4xl px-4 text-center text-white"
         >
-          <motion.p variants={fadeUp} className="mb-4 text-sm font-semibold uppercase tracking-widest text-amber-300">
+          <motion.p variants={fadeUp} className="mb-4 text-sm font-semibold uppercase tracking-widest text-secondary-foreground/90">
             Morocco, Unlocked
           </motion.p>
           <motion.h1
             variants={fadeUp}
             className="mb-6 text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl"
           >
-            Discover Authentic
+            Find Your Sanctuary in
             <br />
-            <span className="text-amber-300">Morocco</span>
+            Modern Morocco
           </motion.h1>
           <motion.p variants={fadeUp} className="mb-10 max-w-xl mx-auto text-lg text-white/80">
-            Hand-curated experiences with local experts. From Sahara glamping to Fes medina tours — find your story.
+            Hand-curated experiences and properties from local experts — from Sahara glamping to Fes medina riads.
           </motion.p>
           <motion.div variants={fadeUp} className="flex max-w-lg mx-auto gap-2">
             <Input
               placeholder="Search experiences, cities..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="h-12 rounded-xl bg-white/10 border-white/30 text-white placeholder:text-white/60 backdrop-blur-sm focus:bg-white/20 flex-1"
+              className="h-12 rounded bg-white/10 border-white/30 text-white placeholder:text-white/60 backdrop-blur-sm focus:bg-white/20 flex-1"
             />
             <Link
               href={`/experiences${query ? `?q=${encodeURIComponent(query)}` : ""}`}
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "h-12 px-6 rounded-xl shrink-0 gap-2"
+                "h-12 px-6 rounded shrink-0 gap-2 bg-secondary text-secondary-foreground hover:bg-secondary/90"
               )}
             >
               <Search className="h-4 w-4" />
@@ -86,77 +112,20 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Stats */}
-      <section className="border-y border-border/60 bg-muted/30">
-        <div className="mx-auto max-w-5xl px-4 py-10 grid grid-cols-3 gap-6 text-center">
-          {[
-            { icon: Map, label: "Experiences", value: "500+" },
-            { icon: Users, label: "Local Curators", value: "50+" },
-            { icon: Star, label: "Happy Travelers", value: "12,000+" },
-          ].map(({ icon: Icon, label, value }) => (
-            <div key={label}>
-              <Icon className="h-6 w-6 mx-auto mb-2 text-primary" />
-              <p className="text-2xl font-bold">{value}</p>
-              <p className="text-sm text-muted-foreground">{label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <ZellijDivider />
 
-      {/* About */}
-      <section id="about" className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8 scroll-mt-16">
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid gap-10 items-center lg:grid-cols-2"
-        >
-          <motion.div variants={fadeUp} className="relative aspect-4/3 overflow-hidden rounded-3xl">
-            <Image
-              src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=1200&q=80"
-              alt="A narrow alley in a Moroccan medina"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 50vw, 100vw"
-            />
-          </motion.div>
-          <div>
-            <motion.p variants={fadeUp} className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">
-              Our Story
-            </motion.p>
-            <motion.h2 variants={fadeUp} className="text-3xl font-bold tracking-tight sm:text-4xl mb-5">
-              About Darna
-            </motion.h2>
-            <motion.p variants={fadeUp} className="text-muted-foreground mb-4">
-              <span className="font-semibold text-foreground">Darna</span>{" "}
-              means &ldquo;our home&rdquo; in Moroccan Arabic. We started it to connect independent
-              travelers with the people who know Morocco best — local guides, artisans, and hosts
-              running small, authentic experiences you won&apos;t find in a typical tour package.
-            </motion.p>
-            <motion.p variants={fadeUp} className="text-muted-foreground">
-              Every experience on Darna is vetted and hosted by a local curator, not a corporate operator.
-              Book with confidence, travel with intention.
-            </motion.p>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Featured Experiences */}
+      {/* Featured Communities */}
       <section className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="mb-10 flex items-end justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Handpicked for You</p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Featured Experiences</h2>
+            <p className="text-sm font-semibold uppercase tracking-wider text-secondary mb-2">Handpicked for You</p>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Featured Communities</h2>
           </div>
           <Link
             href="/experiences"
-            className={cn(
-              buttonVariants({ variant: "ghost" }),
-              "hidden sm:flex gap-1"
-            )}
+            className={cn(buttonVariants({ variant: "ghost" }), "hidden sm:flex")}
           >
-            View all <ArrowRight className="h-4 w-4" />
+            View all
           </Link>
         </div>
         <motion.div
@@ -173,28 +142,73 @@ export default function HomePage() {
           ))}
         </motion.div>
         <div className="mt-10 text-center sm:hidden">
-          <Link
-            href="/experiences"
-            className={cn(buttonVariants({ variant: "outline" }))}
-          >
+          <Link href="/experiences" className={cn(buttonVariants({ variant: "outline" }))}>
             View all experiences
           </Link>
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section id="curators" className="mx-auto w-full max-w-7xl px-4 pb-20 sm:px-6 lg:px-8 scroll-mt-16">
-        <div className="rounded-3xl bg-primary p-12 text-center text-white">
-          <h2 className="text-3xl font-bold mb-3">Are you a local expert?</h2>
-          <p className="text-white/80 mb-8 max-w-md mx-auto">
-            Share your Morocco with the world. List your experiences and connect with travelers who want authentic stories.
-          </p>
-          <Link
-            href="/sign-up?role=merchant"
-            className={cn(buttonVariants({ variant: "secondary", size: "lg" }), "rounded-xl")}
+      {/* Our Services */}
+      <section id="curators" className="border-y border-border/60 bg-muted/30 py-20 scroll-mt-16">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <p className="text-sm font-semibold uppercase tracking-wider text-secondary mb-2">Why Darna</p>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Services</h2>
+          </div>
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
           >
-            Become a Curator
-          </Link>
+            {SERVICES.map(({ icon: Icon, title, description, href }) => {
+              const content = (
+                <>
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded bg-primary/10 text-primary">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="font-semibold mb-1">{title}</h3>
+                  <p className="text-sm text-muted-foreground">{description}</p>
+                </>
+              );
+              return (
+                <motion.div key={title} variants={fadeUp}>
+                  {href ? (
+                    <Link href={href} className="block rounded-lg p-4 -m-4 transition-colors hover:bg-background/60">
+                      {content}
+                    </Link>
+                  ) : (
+                    <div>{content}</div>
+                  )}
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Latest News */}
+      <section className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mb-10">
+          <p className="text-sm font-semibold uppercase tracking-wider text-secondary mb-2">Stay Informed</p>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Latest News</h2>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {NEWS.map((item) => (
+            <NewsCard key={item.id} news={item} />
+          ))}
+        </div>
+      </section>
+
+      {/* Newsletter CTA */}
+      <section className="mx-auto w-full max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="rounded-lg bg-primary p-12 text-center text-white">
+          <h2 className="text-3xl font-bold mb-3">Join the Darna Community</h2>
+          <p className="text-white/80 mb-8 max-w-md mx-auto">
+            Get new experiences, property listings, and community stories delivered to your inbox.
+          </p>
+          <NewsletterForm />
         </div>
       </section>
 

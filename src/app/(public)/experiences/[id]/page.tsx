@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { MapPin, Clock, Star, Users } from "lucide-react";
+import { MapPin, Clock, Star, Users, Building2, BedDouble } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import BookingWidget from "@/components/shared/BookingWidget";
@@ -53,6 +53,14 @@ export default async function ExperiencePage({
                   <span className="flex items-center gap-1">
                     <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
                     {experience.rating} ({experience.reviewCount} reviews)
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Building2 className="h-4 w-4" />
+                    {experience.propertyType}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <BedDouble className="h-4 w-4" />
+                    {experience.bedrooms} bedroom{experience.bedrooms === 1 ? "" : "s"}
                   </span>
                 </div>
               </div>

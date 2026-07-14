@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#8aa4ff",
+                        "inverse-primary": "#b5c4ff",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#313030",
+                        "tertiary-fixed-dim": "#f9bc48",
+                        "primary-container": "#003399",
+                        "surface-tint": "#3557bc",
+                        "secondary": "#9d4131",
+                        "on-secondary-fixed-variant": "#7e2a1c",
+                        "on-tertiary-fixed-variant": "#5f4100",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1c1b1b",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#271900",
+                        "surface-container-highest": "#e5e2e1",
+                        "outline-variant": "#c4c5d5",
+                        "tertiary-fixed": "#ffdea9",
+                        "on-secondary-fixed": "#3f0300",
+                        "on-primary-fixed-variant": "#153ea3",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#d69e2b",
+                        "surface-container-high": "#eae7e7",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface": "#fcf9f8",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e5e2e1",
+                        "primary-fixed": "#dce1ff",
+                        "secondary-fixed": "#ffdad4",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary-fixed": "#00164e",
+                        "tertiary": "#362400",
+                        "on-surface-variant": "#444653",
+                        "surface-dim": "#dcd9d9",
+                        "on-secondary-container": "#742316",
+                        "secondary-fixed-dim": "#ffb4a6",
+                        "primary": "#002068",
+                        "secondary-container": "#fd8b76",
+                        "background": "#fcf9f8",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1c1b1b",
+                        "surface-container-low": "#f6f3f2",
+                        "tertiary-container": "#523800",
+                        "on-secondary": "#ffffff",
+                        "outline": "#747684",
+                        "surface-container": "#f0eded"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "section-gap-lg": "128px",
+                        "section-gap-sm": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "body-base": ["Inter"],
+                        "body-bold": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-bold": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "label-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .mosaic-bg {
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+            background-opacity: 0.05;
+        }
+        .mosaic-divider {
+            height: 4px;
+            background: linear-gradient(90deg, #002068 0%, #9d4131 50%, #f9bc48 100%);
+            opacity: 0.2;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-base mosaic-bg">
+<div class="flex min-h-screen">
+<!-- SideNavBar (Desktop) -->
+<aside class="hidden md:flex flex-col h-screen py-8 w-72 bg-surface dark:bg-inverse-surface border-r border-outline-variant/20 sticky top-0 relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-1 before:h-full before:bg-gradient-to-b before:from-primary before:to-secondary">
+<div class="px-6 mb-8">
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">Darna Community</h1>
+<p class="text-on-surface-variant font-label-sm mt-1">Welcome back, resident</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Navigation Items -->
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low mx-4 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-body-md text-body-md">Home</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low mx-4 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="real_estate_agent">real_estate_agent</span>
+<span class="font-body-md text-body-md">Listings</span>
+</a>
+<!-- Forum (Active) -->
+<a class="flex items-center gap-4 px-4 py-3 bg-primary-container/10 dark:bg-primary-fixed-dim/10 text-primary dark:text-inverse-primary font-bold rounded-lg mx-4 border-l-4 border-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="forum" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="font-body-md text-body-md">Forum</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low mx-4 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="person_apron">person_apron</span>
+<span class="font-body-md text-body-md">My Portal</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low mx-4 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-4">
+<button class="w-full py-3 px-6 rounded-lg bg-secondary text-on-secondary font-body-bold hover:brightness-110 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+                Contact Admin
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 min-w-0 overflow-y-auto pb-section-gap-sm">
+<!-- Top Header (Contextual) -->
+<header class="h-16 px-margin-mobile md:px-margin-desktop flex items-center justify-between sticky top-0 bg-white/80 backdrop-blur-md z-40 border-b border-outline-variant/30">
+<div class="flex items-center gap-4">
+<span class="md:hidden material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Community Feed</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<input class="h-10 pl-10 pr-4 rounded-full border-outline-variant bg-surface-container-low focus:ring-2 focus:ring-primary focus:border-primary text-body-base w-64 transition-all" placeholder="Search discussions..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-sm" data-icon="search">search</span>
+</div>
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img alt="Resident Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC70ZtFn9nzZ2BA7-GB6cpeJ4attqb_nRniDH_-wEdHkGUykuDz4GElJNWUofwxf1WeH-PECuXqMbA6pAVt0hUKNCbzBPcwKeE3MhaVHh7M7u9s4QdyQbQK7WTKrTJm-OkrD_i0y2fZ0Gd5qK5PL8jY17HjvVwnI7Dm4RX46nRUCvddDLXW7NrsEwz_EAVNtOCT8vTO1Y35qq67n8dEYgK1V6mkeJ0kh4xZLxpmBGpv42YNKa2RpB6x5w"/>
+</div>
+</div>
+</header>
+<div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop mt-8">
+<!-- Tag Filter Bar -->
+<div class="flex flex-wrap gap-3 mb-8 overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary font-body-bold whitespace-nowrap shadow-sm">All Posts</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed-dim hover:text-primary transition-all font-body-base whitespace-nowrap">General</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed-dim hover:text-primary transition-all font-body-base whitespace-nowrap">Maintenance</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed-dim hover:text-primary transition-all font-body-base whitespace-nowrap">Events</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed-dim hover:text-primary transition-all font-body-base whitespace-nowrap">Marketplace</button>
+</div>
+<!-- Create Post Interaction Area -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-6 mb-8 border border-outline-variant/30 transition-all hover:shadow-md relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full mosaic-divider"></div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+<img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA89Liuk2GvT6JR-gsxEr8_a8JFafd2l2HF8dD9f-Mlj7lL5vOq0uRSXmd2lyYu-zE3_HD1bofvNXiIHCg_pqE-3-4NKPtKiSPnmHTIxoN7FgyOvY7yHIoDxdX-MF8Lu2i6F3MdJ-DPJv3i-k8uLZzJbzk3HfMvc5tZN1UXp43Eu-U2lzwUrUlrgVB8SWbNzyeF1MtY08VICGQfrvCmV9bQyPL8zHn1ZHGLLtzMoOnuIe5Dkvw7U2M3XA"/>
+</div>
+<div class="flex-1">
+<button class="w-full text-left px-5 py-3 rounded-lg bg-surface-container-low text-on-surface-variant font-body-base hover:bg-surface-container transition-colors border border-outline-variant/20">
+                            Share something with your neighbors...
+                        </button>
+</div>
+</div>
+<div class="flex justify-between mt-4 pt-4 border-t border-outline-variant/20">
+<div class="flex gap-4">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-label-sm">
+<span class="material-symbols-outlined text-xl" data-icon="image">image</span>
+                            Image
+                        </button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-label-sm">
+<span class="material-symbols-outlined text-xl" data-icon="calendar_month">calendar_month</span>
+                            Event
+                        </button>
+</div>
+<button class="bg-primary text-on-primary px-6 py-1.5 rounded-lg font-body-bold text-sm shadow-sm hover:brightness-110 active:scale-95 transition-all">
+                        Post
+                    </button>
+</div>
+</div>
+<!-- Forum Feed -->
+<div class="space-y-6">
+<!-- Post Card-->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden hover:border-primary/30 transition-all group">
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3 items-center">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img alt="Omar Al-Fassi" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3z1cuXViFoM3hD7Q8Fqcb6ZPsGL8qiads73K-MeXjMYVJCFbhPbVU9IONYIzG04CZ0Bs4HBZLbS9cEWOJIaIz9VWdCOvT0y3eRZPkMZwqogrKEeQRY4vQN7ysTPaLgNETcViSzcaqkfQO2Dnzp9kSXEUJXKKoxaBWugK8Mq7-C7iXd5LkC7efR2k8GHEDhpjW218Iay7PpAHVPhnLFvjkQoAF-j1TCJV0B83UqnR1x9KUzkTm_z23hw"/>
+</div>
+<div>
+<h4 class="font-body-bold text-on-surface">Omar Al-Fassi</h4>
+<p class="text-on-surface-variant text-label-sm">2 hours ago • Apt 402</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-low text-secondary font-label-caps text-[10px] border border-secondary/10">Maintenance</span>
+</div>
+<h3 class="font-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Water pressure issue in Block B?</h3>
+<p class="text-on-surface-variant font-body-base line-clamp-3 mb-4">
+                            Has anyone else noticed a significant drop in water pressure since this morning? I called the front desk but haven't received an update yet. Wanted to see if it's just my unit or more widespread before I escalate.
+                        </p>
+<div class="flex items-center gap-6 pt-4 border-t border-outline-variant/10">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="thumb_up">thumb_up</span>
+<span class="font-label-sm">12</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="comment">comment</span>
+<span class="font-label-sm">8 Comments</span>
+</button>
+<button class="ml-auto text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Post Card 2: Event -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden hover:border-primary/30 transition-all group">
+<div class="h-48 relative overflow-hidden">
+<img alt="Event Header" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUnln4D1PLIS3BK8WHImzAB9i-GyRl465efJuoycoqltw1Ek8WC1r8oou02tpf_uTQqkiQN7_emVGNhYbsuaKLOZiJ5f7x7_D_bCHB_vapErLIn92mlRxDcpq4XKN31e7-v4tWtuMbt9NifHEtbCQ7BqnsP8i9eonUYUS7sLT9h6rxo37sZdTfULpEFAYQt-YjFiKeJIvSr5atf1aLICuEhCNYBOV-B-_bicl26MkXdte42r9W4D75PA"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-primary font-label-caps text-[10px] border border-primary/20">Events</div>
+</div>
+<div class="p-6">
+<div class="flex gap-3 items-center mb-4">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img alt="Layla Bensouda" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDviRrtR4fR9Egiz30tq9YI7js5t0zO_dr_TNl9BvyR8S-W3AgwlkjqZHnY4LUV1s0geqSAclf0JXL1gPXqflxLx_7uaXGLnchw_-cuVIEgvLRXeG0M7_DXsej-ktw5-9fTY_YH1rdPGtC0O0J7Y-AT1462L0u6_hEFGw4KEqzHJVeu0nu07wHnddQCoqsn_iypgxQVF0bL_9OoEDA0ETLQm-cU-ZhR8-GWcnA6XJ_AgwoK0etIjpft6g"/>
+</div>
+<div>
+<h4 class="font-body-bold text-on-surface">Layla Bensouda</h4>
+<p class="text-on-surface-variant text-label-sm">Yesterday • Community Manager</p>
+</div>
+</div>
+<h3 class="font-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Rooftop Iftar Social - This Friday!</h3>
+<p class="text-on-surface-variant font-body-base line-clamp-2 mb-4">
+                            We are hosting a special community Iftar on the Block A rooftop this Friday evening. Join your neighbors for a night of traditional Moroccan dishes, music, and great conversation as the sun sets over the city.
+                        </p>
+<div class="flex items-center gap-6 pt-4 border-t border-outline-variant/10">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="favorite" style="font-variation-settings: 'FILL' 1; color: #9d4131;">favorite</span>
+<span class="font-label-sm">45</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm">24 Comments</span>
+</button>
+<button class="ml-auto text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Post Card 3: Marketplace -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden hover:border-primary/30 transition-all group">
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3 items-center">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img alt="Karim Idris" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ01jV0OBW8xSgIVtACobyE-QpVOPz1Ep4W2HNFCCsRCsRYtSY6Q2KlgidGM9FlNPC5xknVAHNKuWnQQG5Dr-l41DYgMDs6G--KuDYDnTMF8WrQjH190nPJKA8vQ_Wb3Ce1rNXSyULe_DVdcA5wTdE4IJlCIWu3ioU66p0w5Ck3y3IYoYoDTkgzN9x5ojmh6mTtX6ulW5UMEx5z57PO2r8h5DjBzpKiQIpQWgLsc3PQI0_3h0QvbfZyw"/>
+</div>
+<div>
+<h4 class="font-body-bold text-on-surface">Karim Idris</h4>
+<p class="text-on-surface-variant text-label-sm">5 hours ago • Block C</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-low text-tertiary-container font-label-caps text-[10px] border border-tertiary-container/20">Marketplace</span>
+</div>
+<h3 class="font-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Moving Sale: Mid-century Sofa</h3>
+<p class="text-on-surface-variant font-body-base line-clamp-3 mb-4">
+                            Sadly moving out and can't take this beautiful 3-seater sofa with me. It's only 6 months old and in pristine condition. Asking for 3,500 MAD. First come, first served! DM for photos and pickup details.
+                        </p>
+<div class="flex items-center gap-6 pt-4 border-t border-outline-variant/10">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="thumb_up">thumb_up</span>
+<span class="font-label-sm">5</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="comment">comment</span>
+<span class="font-label-sm">3 Comments</span>
+</button>
+<button class="ml-auto text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Load More -->
+<div class="flex justify-center mt-12">
+<button class="px-8 py-3 rounded-lg border-2 border-primary text-primary font-body-bold hover:bg-primary/5 transition-all">
+                    Load More Discussions
+                </button>
+</div>
+</div>
+</main>
+<!-- Right Sidebar (Trending/Stats) - Desktop Only -->
+<aside class="hidden lg:block w-80 h-screen py-8 px-6 bg-surface-container-low border-l border-outline-variant/30 sticky top-0 overflow-y-auto">
+<div class="mb-8">
+<h3 class="font-body-bold text-on-surface mb-4">Trending Topics</h3>
+<div class="space-y-4">
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/20 hover:border-primary/30 transition-all cursor-pointer">
+<p class="text-label-sm text-primary">#RooftopIftar</p>
+<p class="text-body-base font-body-bold text-on-surface">12 new posts today</p>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/20 hover:border-primary/30 transition-all cursor-pointer">
+<p class="text-label-sm text-primary">#PoolMaintenance</p>
+<p class="text-body-base font-body-bold text-on-surface">8 people discussing</p>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/20 hover:border-primary/30 transition-all cursor-pointer">
+<p class="text-label-sm text-primary">#BookClub</p>
+<p class="text-body-base font-body-bold text-on-surface">Starts next Monday</p>
+</div>
+</div>
+</div>
+<div class="mb-6 rounded-lg overflow-hidden h-12 border border-outline-variant/20 shadow-sm">
+<img alt="Decorative Moroccan pattern" class="w-full h-full object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtdffB7FKiAAjA55dLeTEGfkP_w8DQXN7rEiZnnlNieaCzNKjBo8-wLyDyuo5GDsKezGyx7Ocq4YENP0BDaIt67K8YdqcVep-o7DthpPHc5_UCwFmgi1Vp3H1JozVAapvCXmekCIHxKr-4-yRTzBQ7bdwWI2m3q_M6bayqeygfn3nxsg3GcWkSxC5UeKEM6WLcU3UA2jVEbXOu1ds4Q_LuFB3_L-5eT7I87j7QFQ83Ah6aY7xeslOtwQ"/>
+</div>
+<div class="p-6 bg-primary-container rounded-xl text-white mb-8 relative overflow-hidden group">
+<div class="absolute inset-0 mosaic-bg opacity-10"></div>
+<span class="material-symbols-outlined text-4xl mb-3 relative z-10" data-icon="campaign">campaign</span>
+<h3 class="font-headline-md mb-2 relative z-10">Notice Board</h3>
+<p class="text-sm opacity-90 leading-relaxed mb-4 relative z-10">Fire drill scheduled for all blocks this Saturday at 10:00 AM. Please review your evacuation routes.</p>
+<button class="text-xs font-bold underline uppercase tracking-wider relative z-10 hover:text-tertiary-fixed transition-colors">Read Protocol</button>
+</div>
+<div class="text-center pt-8 border-t border-outline-variant/20">
+<p class="text-on-surface-variant text-label-sm">© 2024 Darna Real Estate</p>
+<p class="text-on-surface-variant text-[10px] mt-1 italic">Modern Moroccan Living</p>
+</div>
+</aside>
+</div>
+<!-- Mobile Navigation Bar -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white shadow-[0_-4px_12px_rgba(0,0,0,0.05)] flex items-center justify-around px-4 z-50">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="real_estate_agent">real_estate_agent</span>
+<span class="text-[10px] font-bold">Listings</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="forum" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="text-[10px] font-bold">Forum</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="person_apron">person_apron</span>
+<span class="text-[10px] font-bold">Portal</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</a>
+</div>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 md:bottom-12 md:right-12 w-14 h-14 bg-secondary text-on-secondary rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-90 transition-all z-40">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+<script>
+    // Interaction logic
+    const searchInput = document.querySelector('input[type="text"]');
+    if (searchInput) {
+        searchInput.addEventListener('focus', () => {
+            searchInput.classList.add('w-80');
+            searchInput.classList.remove('w-64');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.classList.add('w-64');
+            searchInput.classList.remove('w-80');
+        });
+    }
+
+    // Tab selection logic
+    const filterButtons = document.querySelectorAll('.overflow-x-auto button');
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => {
+                b.classList.remove('bg-primary', 'text-on-primary', 'font-body-bold');
+                b.classList.add('bg-surface-container-highest', 'text-on-surface-variant', 'font-body-base');
+            });
+            btn.classList.remove('bg-surface-container-highest', 'text-on-surface-variant', 'font-body-base');
+            btn.classList.add('bg-primary', 'text-on-primary', 'font-body-bold');
+        });
+    });
+</script>
+</body></html>

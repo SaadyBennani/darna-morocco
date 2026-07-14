@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#8aa4ff",
+                        "inverse-primary": "#b5c4ff",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#313030",
+                        "tertiary-fixed-dim": "#f9bc48",
+                        "primary-container": "#003399",
+                        "surface-tint": "#3557bc",
+                        "secondary": "#9d4131",
+                        "on-secondary-fixed-variant": "#7e2a1c",
+                        "on-tertiary-fixed-variant": "#5f4100",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1c1b1b",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#271900",
+                        "surface-container-highest": "#e5e2e1",
+                        "outline-variant": "#c4c5d5",
+                        "tertiary-fixed": "#ffdea9",
+                        "on-secondary-fixed": "#3f0300",
+                        "on-primary-fixed-variant": "#153ea3",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#d69e2b",
+                        "surface-container-high": "#eae7e7",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface": "#fcf9f8",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e5e2e1",
+                        "primary-fixed": "#dce1ff",
+                        "secondary-fixed": "#ffdad4",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary-fixed": "#00164e",
+                        "tertiary": "#362400",
+                        "on-surface-variant": "#444653",
+                        "surface-dim": "#dcd9d9",
+                        "on-secondary-container": "#742316",
+                        "secondary-fixed-dim": "#ffb4a6",
+                        "primary": "#002068",
+                        "secondary-container": "#fd8b76",
+                        "background": "#fcf9f8",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1c1b1b",
+                        "surface-container-low": "#f6f3f2",
+                        "tertiary-container": "#523800",
+                        "on-secondary": "#ffffff",
+                        "outline": "#747684",
+                        "surface-container": "#f0eded"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "section-gap-lg": "128px",
+                        "section-gap-sm": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "body-base": ["Plus Jakarta Sans"],
+                        "body-bold": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-bold": ["16px", {"lineHeight": "24px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface font-body-base text-on-surface">
+<div class="flex min-h-screen">
+<!-- SideNavBar (Updated based on COMPONENTS_12) -->
+<aside class="hidden md:flex flex-col h-screen py-8 bg-surface dark:bg-inverse-surface border-r border-outline-variant/20 w-72 sticky top-0 relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-1 before:h-full before:bg-gradient-to-b before:from-primary before:to-secondary">
+<div class="absolute right-0 top-0 bottom-0 w-32 opacity-[0.08] overflow-hidden pointer-events-none">
+<img alt="Geometric Zellij star pattern" class="h-full w-full object-cover grayscale brightness-50 contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmJZzdt18vWZ01RbJObGkVFoesWmqiQ_-vmOOf2NiAytjFiaknK1Hy9lOneAbtT1CqqdivWWS0l07k-r7n_kDj2qxMctKDKUK1m7JVCXtgp_NvNJ5tvsscx6fZC5ayh2SIJDr6Yd5lg6IV29CvRD7ijAYbpg753nY7-HRTcxTQgeHRwrijdW3rbTcz0Ru1ztt3-33dnUtB-ffk284QzZa_4gLRxbjr8kagCF0SmpejYraJHA8cq6NbyA"/>
+</div>
+<div class="px-8 mb-8 z-10">
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">Darna Community</h1>
+<p class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md mt-1">Welcome back, resident</p>
+</div>
+<div class="px-4 mb-8 z-10">
+<div class="flex items-center gap-3 p-3 bg-surface-container-low dark:bg-surface-variant/20 rounded-xl">
+<div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-outline-variant/30">
+<img alt="Resident Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPd2LnDRXe6POp7LnPIAUm7REKWpRn3q_cK6z70MHdSRg6TtaJ5puuwDHkkEMHipdyc_MdGralU7WyTze7HB6T1RzlvPJ3_y_7phMcd4__lDxtBC4WI_6Q_zHpuXlLXUkR8t4umGPJtFJ9QjAy8yJJRDy-BHdEmsxkcvC4XfkiBmFZ_R4gVFRwwabgLHtnyFTYO7R31HrDVhX_tQNFlI2rNafPhS7H2r6Gs5Or6kGMIWw9eow-bnUSqA"/>
+</div>
+<div>
+<p class="font-body-bold text-body-bold text-on-surface dark:text-inverse-on-surface">Elena Mansour</p>
+<p class="text-label-md text-on-surface-variant dark:text-surface-variant">Unit 402, Block B</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1 z-10">
+<a class="flex items-center gap-3 py-3 px-4 bg-primary-container/10 dark:bg-primary-fixed-dim/10 text-primary dark:text-inverse-primary font-bold rounded-lg mx-4 border-l-4 border-primary transition-transform duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-body-md">Home</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low mx-4 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="real_estate_agent">real_estate_agent</span>
+<span class="font-body-md">Listings</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low mx-4 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-body-md">Forum</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low mx-4 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person_apron">person_apron</span>
+<span class="font-body-md">My Portal</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low mx-4 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+</nav>
+<div class="px-4 mt-auto z-10">
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-lg font-body-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+                Contact Admin
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 min-w-0 pb-section-gap-sm">
+<!-- Mobile Header -->
+<header class="md:hidden flex items-center justify-between h-16 px-margin-mobile bg-white/80 backdrop-blur-md sticky top-0 z-50">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Darna</h1>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pt-8">
+<!-- Welcome Section -->
+<div class="mb-10">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Welcome Home, Elena</h2>
+<p class="text-body-lg text-on-surface-variant">Here is what's happening at Darna Community today.</p>
+</div>
+<!-- Quick Actions Bento Grid with Zellij integration -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-section-gap-sm">
+<div class="group cursor-pointer bg-white p-6 rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmJZzdt18vWZ01RbJObGkVFoesWmqiQ_-vmOOf2NiAytjFiaknK1Hy9lOneAbtT1CqqdivWWS0l07k-r7n_kDj2qxMctKDKUK1m7JVCXtgp_NvNJ5tvsscx6fZC5ayh2SIJDr6Yd5lg6IV29CvRD7ijAYbpg753nY7-HRTcxTQgeHRwrijdW3rbTcz0Ru1ztt3-33dnUtB-ffk284QzZa_4gLRxbjr8kagCF0SmpejYraJHA8cq6NbyA"/>
+</div>
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<h3 class="font-body-bold text-body-bold mb-1">Pay Rent</h3>
+<p class="text-label-md text-on-surface-variant">Next due: Oct 1st</p>
+</div>
+<div class="group cursor-pointer bg-white p-6 rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmJZzdt18vWZ01RbJObGkVFoesWmqiQ_-vmOOf2NiAytjFiaknK1Hy9lOneAbtT1CqqdivWWS0l07k-r7n_kDj2qxMctKDKUK1m7JVCXtgp_NvNJ5tvsscx6fZC5ayh2SIJDr6Yd5lg6IV29CvRD7ijAYbpg753nY7-HRTcxTQgeHRwrijdW3rbTcz0Ru1ztt3-33dnUtB-ffk284QzZa_4gLRxbjr8kagCF0SmpejYraJHA8cq6NbyA"/>
+</div>
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="build">build</span>
+</div>
+<h3 class="font-body-bold text-body-bold mb-1">Request Maintenance</h3>
+<p class="text-label-md text-on-surface-variant">2 active requests</p>
+</div>
+<div class="group cursor-pointer bg-white p-6 rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmJZzdt18vWZ01RbJObGkVFoesWmqiQ_-vmOOf2NiAytjFiaknK1Hy9lOneAbtT1CqqdivWWS0l07k-r7n_kDj2qxMctKDKUK1m7JVCXtgp_NvNJ5tvsscx6fZC5ayh2SIJDr6Yd5lg6IV29CvRD7ijAYbpg753nY7-HRTcxTQgeHRwrijdW3rbTcz0Ru1ztt3-33dnUtB-ffk284QzZa_4gLRxbjr8kagCF0SmpejYraJHA8cq6NbyA"/>
+</div>
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</div>
+<h3 class="font-body-bold text-body-bold mb-1">Book Amenities</h3>
+<p class="text-label-md text-on-surface-variant">Pool, Gym, Lounge</p>
+</div>
+<div class="group cursor-pointer bg-white p-6 rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmJZzdt18vWZ01RbJObGkVFoesWmqiQ_-vmOOf2NiAytjFiaknK1Hy9lOneAbtT1CqqdivWWS0l07k-r7n_kDj2qxMctKDKUK1m7JVCXtgp_NvNJ5tvsscx6fZC5ayh2SIJDr6Yd5lg6IV29CvRD7ijAYbpg753nY7-HRTcxTQgeHRwrijdW3rbTcz0Ru1ztt3-33dnUtB-ffk284QzZa_4gLRxbjr8kagCF0SmpejYraJHA8cq6NbyA"/>
+</div>
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</div>
+<h3 class="font-body-bold text-body-bold mb-1">Contact Support</h3>
+<p class="text-label-md text-on-surface-variant">Available 24/7</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Announcements-->
+<div class="lg:col-span-2 space-y-gutter">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface">Latest Announcements</h3>
+<button class="text-primary font-label-md text-label-md hover:underline transition-all">View All</button>
+</div>
+<!-- Announcement Card 1 -->
+<div class="bg-white p-6 rounded-xl border border-outline-variant relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
+<div class="flex items-start gap-4 relative z-10">
+<div class="bg-primary text-on-primary p-2 rounded-lg">
+<span class="material-symbols-outlined" data-icon="notification_important">notification_important</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-body-bold text-body-bold text-primary">Elevator Maintenance: Block B</h4>
+<span class="text-label-md text-on-surface-variant">2h ago</span>
+</div>
+<p class="text-body-md text-on-surface-variant mb-4 leading-relaxed">Elevator #3 in Block B will be offline for routine servicing between 10:00 AM and 2:00 PM tomorrow. Please use elevators #1 or #2 during this window. We apologize for the inconvenience.</p>
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-label-md text-on-surface-variant border border-outline-variant/30">Maintenance</span>
+<button class="text-primary font-body-bold text-body-md flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                        Read More <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Announcement Card 2 -->
+<div class="bg-white p-6 rounded-xl border border-outline-variant group relative overflow-hidden">
+<div class="absolute inset-0 opacity-[0.01] pointer-events-none">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmJZzdt18vWZ01RbJObGkVFoesWmqiQ_-vmOOf2NiAytjFiaknK1Hy9lOneAbtT1CqqdivWWS0l07k-r7n_kDj2qxMctKDKUK1m7JVCXtgp_NvNJ5tvsscx6fZC5ayh2SIJDr6Yd5lg6IV29CvRD7ijAYbpg753nY7-HRTcxTQgeHRwrijdW3rbTcz0Ru1ztt3-33dnUtB-ffk284QzZa_4gLRxbjr8kagCF0SmpejYraJHA8cq6NbyA"/>
+</div>
+<div class="flex items-start gap-4 relative z-10">
+<div class="bg-secondary text-on-secondary p-2 rounded-lg">
+<span class="material-symbols-outlined" data-icon="celebration">celebration</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-body-bold text-body-bold text-secondary">Annual Community Rooftop Garden Party</h4>
+<span class="text-label-md text-on-surface-variant">Yesterday</span>
+</div>
+<p class="text-body-md text-on-surface-variant mb-4 leading-relaxed">Join us for our annual spring mixer! Refreshments, live music, and the best sunset views in the city. RSVP via the Events tab by Friday evening.</p>
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-label-md text-on-surface-variant border border-outline-variant/30">Social</span>
+<button class="text-secondary font-body-bold text-body-md flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                        RSVP Now <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Upcoming Events Column -->
+<div class="space-y-gutter">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface">Community Events</h3>
+<button class="text-primary font-label-md text-label-md hover:underline">Full Calendar</button>
+</div>
+<div class="bg-white rounded-xl border border-outline-variant overflow-hidden">
+<!-- Event 1 -->
+<div class="p-4 border-b border-outline-variant hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex gap-4">
+<div class="flex flex-col items-center justify-center w-14 h-14 bg-primary-fixed text-on-primary-fixed rounded-lg border border-primary/10">
+<span class="text-label-md font-bold">OCT</span>
+<span class="text-headline-md font-extrabold -mt-1">12</span>
+</div>
+<div>
+<h5 class="font-body-bold text-body-bold leading-tight group-hover:text-primary transition-colors">Morning Yoga Session</h5>
+<p class="text-label-md text-on-surface-variant mb-1">8:00 AM • Zen Garden</p>
+<p class="text-label-md text-primary font-semibold">12 Residents Attending</p>
+</div>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="p-4 border-b border-outline-variant hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex gap-4">
+<div class="flex flex-col items-center justify-center w-14 h-14 bg-surface-container-highest text-on-surface rounded-lg border border-outline-variant/30">
+<span class="text-label-md font-bold">OCT</span>
+<span class="text-headline-md font-extrabold -mt-1">15</span>
+</div>
+<div>
+<h5 class="font-body-bold text-body-bold leading-tight group-hover:text-primary transition-colors">Cooking Workshop</h5>
+<p class="text-label-md text-on-surface-variant mb-1">6:30 PM • Clubhouse Kitchen</p>
+<p class="text-label-md text-on-surface-variant">4 slots remaining</p>
+</div>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="p-4 hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex gap-4">
+<div class="flex flex-col items-center justify-center w-14 h-14 bg-surface-container-highest text-on-surface rounded-lg border border-outline-variant/30">
+<span class="text-label-md font-bold">OCT</span>
+<span class="text-headline-md font-extrabold -mt-1">20</span>
+</div>
+<div>
+<h5 class="font-body-bold text-body-bold leading-tight group-hover:text-primary transition-colors">Board Meeting</h5>
+<p class="text-label-md text-on-surface-variant mb-1">5:00 PM • Meeting Room 2</p>
+<p class="text-label-md text-on-surface-variant">Open to all residents</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Community Perks Promo -->
+<div class="relative rounded-xl overflow-hidden h-48 group border border-outline-variant">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuArCOcA1nHIXQOs8J0xcbpf7jajWmtEJWGWiI8b2c-2is7EkaC3xXzAgQzMZ2k8nO0ce5zmLOTCW2q0v1PxHr9lI_YFKe7ow55tbn4M4T942n_DZTDDp6DK0SaF346Yo9cNE9fzBL3V2gEm97biXRV0f3VnMM70Z9-02l3jFxOrE3zW4tPdFLG29mE7Vhj2tTtSFTN1ni4P0s9YOymQc4gioh7dovXK1XVTzW5gC5uZzWmjI1U40Fxvyg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-black/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="bg-tertiary text-on-tertiary text-[10px] uppercase tracking-widest font-bold px-2 py-1 rounded mb-2 inline-block">New Perk</span>
+<h4 class="text-white font-headline-md text-headline-md mb-1">Spa &amp; Wellness Center</h4>
+<p class="text-white/80 text-label-md">Exclusive resident rates now active.</p>
+</div>
+<div class="absolute top-4 right-4 opacity-20 pointer-events-none group-hover:rotate-45 transition-transform duration-500">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="star">star</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Mobile Bottom NavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-outline-variant flex justify-around items-center h-16 z-50">
+<a class="flex flex-col items-center text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="real_estate_agent">real_estate_agent</span>
+<span class="text-[10px]">Listings</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="text-[10px]">Forum</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="person_apron">person_apron</span>
+<span class="text-[10px]">Portal</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px]">Settings</span>
+</a>
+</nav>
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface w-full pt-section-gap-sm pb-12 mt-section-gap-sm border-t border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<h2 class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary mb-4 tracking-tight">Darna</h2>
+<p class="text-on-surface-variant dark:text-surface-variant font-body-md leading-relaxed opacity-90">Redefining modern Moroccan living through community, comfort, and state-of-the-art management.</p>
+</div>
+<div>
+<h3 class="font-body-bold text-body-bold text-primary dark:text-inverse-primary mb-4">Resident Resources</h3>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim underline transition-all font-body-md" href="#">Help Center</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim underline transition-all font-body-md" href="#">Maintenance Portal</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim underline transition-all font-body-md" href="#">Community Bylaws</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-body-bold text-body-bold text-primary dark:text-inverse-primary mb-4">Company</h3>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim underline transition-all font-body-md" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim underline transition-all font-body-md" href="#">Careers</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim underline transition-all font-body-md" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-body-bold text-body-bold text-primary dark:text-inverse-primary mb-4">Download App</h3>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3 p-3 bg-surface dark:bg-surface-variant/20 rounded-lg border border-outline-variant/30 cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary dark:text-inverse-primary" data-icon="phone_iphone">phone_iphone</span>
+<div>
+<p class="text-[10px] uppercase font-bold leading-none text-on-surface-variant dark:text-surface-variant">Download on the</p>
+<p class="font-body-bold text-sm text-on-surface dark:text-inverse-on-surface">App Store</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-outline-variant/20 px-margin-desktop max-w-container-max mx-auto">
+<p class="text-center text-on-surface-variant dark:text-surface-variant opacity-70 text-label-md">© 2024 Darna Real Estate. Modern Moroccan Living.</p>
+</div>
+</footer>
+<script>
+    // Neo-Mosaic Micro-interactions
+    document.querySelectorAll('.group').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-4px)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0px)';
+        });
+    });
+</script>
+</body></html>

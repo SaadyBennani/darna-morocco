@@ -10,7 +10,11 @@ export type Experience = {
   category: string;
   rating: number;
   reviewCount: number;
+  propertyType: string;
+  bedrooms: number;
 };
+
+export const PROPERTY_TYPES = ["Riad", "Camp", "Villa", "Guesthouse"];
 
 export type Booking = {
   id: string;
@@ -18,6 +22,14 @@ export type Booking = {
   travelerId: string;
   date: string;
   status: "pending" | "confirmed";
+};
+
+export type NewsItem = {
+  id: string;
+  title: string;
+  excerpt: string;
+  imageUrl: string;
+  date: string;
 };
 
 export const EXPERIENCES: Experience[] = [
@@ -33,6 +45,8 @@ export const EXPERIENCES: Experience[] = [
     category: "Adventure",
     rating: 4.9,
     reviewCount: 148,
+    propertyType: "Camp",
+    bedrooms: 1,
   },
   {
     id: "2",
@@ -46,6 +60,8 @@ export const EXPERIENCES: Experience[] = [
     category: "Cultural",
     rating: 4.8,
     reviewCount: 312,
+    propertyType: "Guesthouse",
+    bedrooms: 2,
   },
   {
     id: "3",
@@ -59,6 +75,8 @@ export const EXPERIENCES: Experience[] = [
     category: "Hiking",
     rating: 4.7,
     reviewCount: 89,
+    propertyType: "Guesthouse",
+    bedrooms: 3,
   },
   {
     id: "4",
@@ -72,6 +90,8 @@ export const EXPERIENCES: Experience[] = [
     category: "Culinary",
     rating: 4.9,
     reviewCount: 203,
+    propertyType: "Riad",
+    bedrooms: 4,
   },
   {
     id: "5",
@@ -85,6 +105,8 @@ export const EXPERIENCES: Experience[] = [
     category: "Cultural",
     rating: 4.8,
     reviewCount: 176,
+    propertyType: "Guesthouse",
+    bedrooms: 2,
   },
   {
     id: "6",
@@ -98,6 +120,8 @@ export const EXPERIENCES: Experience[] = [
     category: "Adventure",
     rating: 4.6,
     reviewCount: 94,
+    propertyType: "Villa",
+    bedrooms: 5,
   },
 ];
 
@@ -106,4 +130,31 @@ export const CATEGORIES = ["All", "Adventure", "Cultural", "Hiking", "Culinary"]
 export const MOCK_BOOKINGS: Booking[] = [
   { id: "b1", experienceId: "1", travelerId: "t1", date: "2026-08-15", status: "confirmed" },
   { id: "b2", experienceId: "3", travelerId: "t1", date: "2026-08-22", status: "pending" },
+];
+
+export const NEWS: NewsItem[] = [
+  {
+    id: "n1",
+    title: "Marrakech's Medina Named UNESCO Heritage Highlight for 2026",
+    excerpt:
+      "A renewed conservation push is restoring riads and souks across the old city, drawing curators eager to showcase authentic craftsmanship.",
+    imageUrl: "https://images.unsplash.com/photo-1597212720158-2ee1861d5f00?w=800&q=80",
+    date: "2026-06-02",
+  },
+  {
+    id: "n2",
+    title: "New Direct Rail Link Cuts Fes-to-Chefchaouen Travel Time",
+    excerpt:
+      "Travelers can now reach the Blue City in under two hours, opening up easier multi-stop itineraries through the north.",
+    imageUrl: "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=800&q=80",
+    date: "2026-05-18",
+  },
+  {
+    id: "n3",
+    title: "Local Curators Launch Sustainable Desert Camp Standards",
+    excerpt:
+      "A coalition of Sahara-based hosts has adopted shared guidelines for water use and waste management at glamping sites.",
+    imageUrl: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80",
+    date: "2026-04-30",
+  },
 ];

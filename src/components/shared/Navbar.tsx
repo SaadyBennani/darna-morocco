@@ -26,8 +26,8 @@ export default function Navbar() {
           <Link href="/experiences" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Explore
           </Link>
-          <Link href="/#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            About
+          <Link href="/community" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Community
           </Link>
           <Link href="/#curators" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             For Curators
